@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqaayadda Daami - Food Menu Gallery</title>
+    <style>
+        /* Kooxda Guud ee Bogga */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fc;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        /* --- FLEXBOX CONTAINER --- */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;       /* Tani waxay keenaysaa inuu wrap sameeyo marka screen-ku isbeddelo */
+            justify-content: center; /* Waxay dhex-dhigaysaa box-yada */
+            gap: 25px;             /* Masaafada u dhaxaysa box-yada */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- FLEX ITEMS (BOX-YADA SAWIRRADA) --- */
+        .gallery-item {
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* Tani waxay ka dhigaysaa inuu si automatic ah isu cabbiro */
+            flex: 1 1 calc(25% - 25px); /* Afar box halkii saf marka shaashadu weyn tahay */
+            min-width: 250px;           /* Cabbirka ugu yar ee sanduuqu yeelan karo */
+        }
+
+        /* Marka mouse-ka la dul dhigo (Hover Effect) */
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Naqshadda Sawirka */
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Si sawirku u fadhiisto si qurux badan */
+            display: block;
+        }
+
+        /* Xogta Sawirka hoos timaada */
+        .item-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Cinwaanka weyn ee cuntada (<h1>) */
+        .item-info h1 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        /* Qoraalka kooban (Caption) */
+        .item-info p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* --- RESPONSIVE DESIGN (Media Queries) --- */
+        /* Shaashadaha Dhexe (Tablets) */
+        @media (max-width: 900px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 25px); /* Laba box halkii saf */
+            }
+        }
+
+        /* Shaashadaha Yaryar (Mobiles) */
+        @media (max-width: 600px) {
+            .gallery-item {
+                flex: 1 1 100%; /* Hal box oo kaliya halkii saf */
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Menu-ga Maqaayadda Daami</h1>
+        <p>Dooro cuntooyinka iyo cabitaannada aad ugu jeceshahay si fudud</p>
+    </header>
+
+    <!-- FLEXBOX CONTAINER -->
+    <div class="gallery-container">
+
+        <!-- Sawirka 1 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
+            <div class="item-info">
+                <h1>Pizza Macaan</h1>
+                <p>Pizza kulul oo leh jiis dheeraad ah iyo hilib jilicsan.</p>
+            </div>
+        </div>
+
+        <!-- Sawirka 2 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+            <div class="item-info">
+                <h1>Burger Dhadhan Leh</h1>
+                <p>Burger hilib lo'aad ah oo leh khudaar daray ah iyo suugo gaar ah.</p>
+            </div>
+        </div>
+
+        <!-- Sawirka 3 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500" alt="Baasto">
+            <div class="item-info">
+                <h1>Baasto Sugo</h1>
+                <p>Baasto Talyaani ah oo lagu kariyey suugo yaanyo iyo hilib shiidan.</p>
+            </div>
+        </div>
+
+        <!-- Sawirka 4 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500" alt="Hilib duban">
+            <div class="item-info">
+                <h1>Hilib Duban</h1>
+                <p>Hilib ari oo si heer sare ah loo dubay, kuna rasan xawaashyo dabiici ah.</p>
+            </div>
+        </div>
+
+        <!-- Sawirka 5 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500" alt="Shaah Somali">
+            <div class="item-info">
+                <h1>Shaah Soomaali</h1>
+                <p>Shaah kulul oo leh caano, qorfaha, iyo hayl si gaar ah loo kariyey.</p>
+            </div>
+        </div>
+
+        <!-- Sawirka 6 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=500" alt="Cabitaan">
+            <div class="item-info">
+                <h1>GOOB QURUX BADAN</h1>
+                <p>WAXAN KU DIYAR AH GOOB QURUXBDAN OO LEH VIEW WAALI AH😀🙌.</p>
+            </div>
+        </div>
+
+        <!-- Sawirka 7 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500" alt="Macmacaan">
+            <div class="item-info">
+                <h1>Kukis iyo Keeg</h1>
+                <p>Macmacaan shukulaato ah oo ku dhunxinaya dhadhan heer sare ah.</p>
+            </div>
+        </div>
+
+        <!-- Sawirka 8 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500" alt="Donuts">
+            <div class="item-info">
+                <h1>Donuts Qurux Badan</h1>
+                <p>Donuts jilicsan oo lagu xardhay shukulaato iyo suugo macaan.</p>
+            </div>
+        </div>
+
+    </div>
+    <audio src=""></audio>
+
+</body>
+</html>
